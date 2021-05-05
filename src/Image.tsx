@@ -2,6 +2,7 @@
 import * as _ from "lodash";
 import * as React from "react";
 import {
+  ActivityIndicator,
   Image as RNImage,
   Animated,
   StyleSheet,
@@ -102,7 +103,7 @@ export default class Image extends React.Component<ImageProps, ImageState> {
     ];
     return (
       <View {...{ style }}>
-        {!!defaultSource && !isImageReady && <RNImage source={defaultSource} style={computedStyle} {...otherProps} />}
+        {!isImageReady && <ActivityIndicator size="small" />}
         {!!preview && (
           <RNImage
             source={preview}
