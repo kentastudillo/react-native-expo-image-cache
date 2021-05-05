@@ -103,7 +103,11 @@ export default class Image extends React.Component<ImageProps, ImageState> {
     ];
     return (
       <View {...{ style }}>
-        {!isImageReady && <ActivityIndicator size="small" />}
+        {!isImageReady && (
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <ActivityIndicator size="large" />
+           </View>
+        )}
         {!!preview && (
           <RNImage
             source={preview}
