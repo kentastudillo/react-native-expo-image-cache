@@ -104,7 +104,7 @@ export default class Image extends React.Component<ImageProps, ImageState> {
     return (
       <View {...{ style }}>
         {!isImageReady && (
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={computedStyle}>
             <ActivityIndicator size="large" />
            </View>
         )}
